@@ -24,11 +24,14 @@
     "build:watch": "tsc -w -p tsconfig.release.json",
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "dev": "concurrently \"npm run build:watch\" \"nodemon --watch build/ --exec node build/src/main\""
   },
   "author": "Jakub Synowiec <github@jakubsynowiec.info>",
   "license": "Apache-2.0",
   "dependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.9",
     "tslib": "~1.9.3"
   }
 }
